@@ -1,4 +1,4 @@
-const apiUrl = "http://jsonblob.com/api/1072398668350636032";
+const apiUrl = "https://jsonblob.com/api/1072398668350636032";
 let request = new XMLHttpRequest();
 
 let plusBtnList = document.querySelectorAll('[name="plusButton"]');

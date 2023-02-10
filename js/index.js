@@ -14,7 +14,6 @@ let price = document.getElementsByName('cart-price');
 let totalCount =  document.getElementsByName('totalCount')[0];
 let msgBtn =  document.getElementsByName('msgBtn');
 
-
 request.open('GET', apiUrl);
 request.responseType = 'json';
 request.send();
@@ -27,14 +26,6 @@ request.onload = function () {
     data = JSON.parse(JSON.stringify(data));
     dataArray(data);
     allReset();
-    // for(let i = 0; i < plusBtnList.length; i++){
-    //     plusBtn[i].setAttribute("disabled", true);
-    //     counterOutput[i].setAttribute("disabled", true);
-    //     minusBtn[i].setAttribute("disabled", true);
-    //     resetBtn[i].setAttribute("disabled", true);
-    // }
-    // msgBtn[0].setAttribute("disabled", true);
-    // msgBtn[1].setAttribute("disabled", true);
 }
 //-----------------------------
 // output data to html
@@ -57,7 +48,6 @@ function dataArray(els) {
 //-----------------------------
 orderBtnList.forEach(function(i, index){
     i.addEventListener("click", function(e){
-        
         plusBtn[index].removeAttribute("disabled");
         counterOutput[index].removeAttribute("disabled");
         counterOutput[index].value++;
@@ -91,9 +81,9 @@ plusBtnList.forEach(function(i, index){
     i.addEventListener("click", function(e){
         counterOutput[index].value++;
 
-        //calculation
-        let sum = String(Number(totalCount.innerText) + Number(price[index].innerText) * 1);
-        totalCount.innerHTML = sum;
+    //calculation
+    let sum = String(Number(totalCount.innerText) + Number(price[index].innerText) * 1);
+    totalCount.innerHTML = sum;
     });
 });
 
